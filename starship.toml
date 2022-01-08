@@ -1,0 +1,52 @@
+# ~/.config/starship.toml
+
+# Use custom format
+format = """$cmd_duration
+[┌────<](bold light red)$directory$git_branch[>](bold light red)$fill$username[@](green)$time
+[└─](bold light red)[](bold purple) """
+
+# Disable the blank line at the start of the prompt
+add_newline = false 
+
+# VARIABLES:
+[fill]
+symbol = " "
+
+[directory]
+read_only = "[RO]"
+truncation_symbol = "../"
+
+[git_branch]
+symbol = " "
+
+[time]
+disabled = false
+style = "yellow"
+format = "[$time]($style) "
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "green"
+
+[cmd_duration]
+min_time = 60_000
+show_milliseconds = false 
+format = "~[$duration]($style) "
+style = "yellow"
+disabled = false
+show_notifications = false
+
+
+##[git_status]
+##conflicted = ""
+##ahead = ""
+##behind = ""
+##diverged = ""
+##up_to_date = ""
+##untracked = ""
+##stashed = ""
+##modified = ""
+##staged = ''
+##renamed = ""
+##deleted = ""
